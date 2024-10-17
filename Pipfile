@@ -5,8 +5,14 @@ name = "pypi"
 
 [packages]
 fastapi = {extras = ["standard"], version = "*"}
+pypdf = "*"
+pymongo = "*"
+pydantic = "*"
+pydantic-settings = "*"
+sqlalchemy = "*"
 
 [dev-packages]
+pytest = "*"
 
 [requires]
 python_version = "3.11"

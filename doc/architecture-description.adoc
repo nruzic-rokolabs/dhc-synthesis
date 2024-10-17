@@ -275,6 +275,41 @@ The component consumes *SowService* and *IndService* REST api indirectly via *Ap
 This way the component can utilize secure HTTPS (HTTP over TLS) connector of the *ApplicationLoadBalancer*.
 The *ApplicationLoadBalancer* component will terminate TLS connection on it's end and forward the HTTP request to the appropriate internal component, either to *SowService* or *IndService*.
 
+== Development view
+
+[plantuml]
+....
+@startuml
+package connectors {
+ package "application (services)" as application  {
+  package domain [
+   This module contains model of the business domain.
+   Its responsability is to model
+   key business entities, value objects and operations on them,
+   using business domain language as much as possible.
+  ]
+ }
+}
+
+note top of connectors
+ Connector modules are modules containing either
+ # input adapters to the application, like rest or websocket controllers
+ # output adapters from inner layers to an infrastructure (as implementations of inner layer interfaces)
+end note
+
+note bottom of application
+ Application module contains application level services.
+ Its resposability is to wire domain module objects into an application specific flow.
+ It provides:
+ # configuration
+ # logging
+ # security
+ # application specific services which doesn't fit into business domain services
+end note
+@enduml
+....
+
+
 == Appendices
 
 === Requirements
