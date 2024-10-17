@@ -40,10 +40,10 @@ services:
 
 volumes:
   postgres:
-    name: dhc-synthesis-postgres-volume
+    name: dhc-synthesis-api-postgres-volume
   mongo:
-    name: dhc-synthesis-mongo-volume
+    name: dhc-synthesis-api-mongo-volume
 
 networks:
   default:
-    name: dhc-synthesis-network-1
+    name: dhc-synthesis-api-network-1
