@@ -1,0 +1,17 @@
+version: 0.1
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 038462773749.dkr.ecr.us-east-1.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t synthesis-backend -f Dockerfile .
+      - docker tag synthesis-backend:latest 038462773749.dkr.ecr.us-east-1.amazonaws.com/synthesis-backend:latest
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push 038462773749.dkr.ecr.us-east-1.amazonaws.com/synthesis-backend:latest
