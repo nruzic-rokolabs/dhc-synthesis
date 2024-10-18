@@ -8,15 +8,15 @@ docker compose up -d
 ```
 
 ### Start application
-Uvicorn process working dir should be app dir to allow pydantic to pick up application settings from app/settings.yml file:
+Uvicorn process working dir should be project root dir to allow pydantic to pick up application settings from settings.yml file:
 ```bash
-cd app && fastapi run main.py
+fastapi run
 ```
 
 ### Start application in dev mode
 To watch and auto reload changes run following command:
 ```bash
-cd app && fastapi dev main.py
+fastapi dev
 ```
 
 ### Start application using docker

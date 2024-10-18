@@ -1,5 +1,4 @@
 from typing import Tuple, Type
-from functools import lru_cache
 
 from pydantic import BaseModel
 from pydantic_settings import (
@@ -11,7 +10,7 @@ from pydantic_settings import (
 
 
 class DatabaseSettings(BaseModel):
-    schema: str = "postgresql+psycopg2"
+    szhema: str = "postgresql+psycopg2"
     username: str = "postgres"
     password: str = "postgres"
     host: str = "localhost"
@@ -19,7 +18,7 @@ class DatabaseSettings(BaseModel):
     database: str = "master"
 
     def url(self) -> str:
-        return f"{self.schema}://{self.username}:{self.username}@{self.username}:{self.username}/{self.username}"
+        return f"{self.szhema}://{self.username}:{self.username}@{self.username}:{self.username}/{self.username}"
 
 
 class Settings(BaseSettings):
