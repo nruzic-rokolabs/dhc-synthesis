@@ -67,18 +67,18 @@ memory = MemorySaver()
 app = workflow.compile(checkpointer=memory)
 
 
-# Simple conversation api
+# Simple conversation helper
 def converse(thread_id: str, message_in: str):
     messages_in = [HumanMessage(message_in)]
     for chunk, metadata in app.stream({
-        "messages": messages_in,
-        "language": "Croatian"
-    }, {
-        "configurable": {
-            "thread_id": thread_id
-        }
-    },
-            stream_mode="messages"
+            "messages": messages_in,
+            "language": "Croatian"
+        }, {
+            "configurable": {
+                "thread_id": thread_id
+            }
+        },
+        stream_mode="messages"
     ):
         print(f"chunk: {chunk}")
         print(f"metad: {metadata}")
@@ -89,7 +89,7 @@ def converse(thread_id: str, message_in: str):
 print(">>>>>>>>>>>>>>>>>>> ChatGPT connector initialized!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
 
-# Connector interface implementation
+# Connector's application interface implementation
 class OpenAIService(AIService):
 
     def simple_streaming_conversation(self, message: ConversationInputMessage) -> str:
