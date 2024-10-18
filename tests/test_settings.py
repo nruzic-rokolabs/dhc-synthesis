@@ -1,5 +1,3 @@
-import os
-
 from app.settings import settings
 
 import tests.settings_factory as sf1

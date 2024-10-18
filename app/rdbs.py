@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from app.domain import Greeting
-from app.settings import settings
+from settings import settings
 
 # an Engine, which the Session will use for connection
 # resources, typically in module scope

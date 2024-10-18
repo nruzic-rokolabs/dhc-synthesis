@@ -8,8 +8,8 @@ $> PYTHONPATH=. python app/cli.py
 
 import argparse
 
-from app import service
-from app.domain import Greeting
+from . import service
+from .domain import Greeting
 
 parser = argparse.ArgumentParser(description="Simple hello world command")
 

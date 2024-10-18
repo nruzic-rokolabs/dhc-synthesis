@@ -10,9 +10,15 @@ pymongo = "*"
 pydantic = "*"
 pydantic-settings = "*"
 sqlalchemy = "*"
+sqlmodel = "*"
+langchain-aws = "*"
+langchain-core = "*"
+langgraph = "*"
+langchain-openai = "*"
 
 [dev-packages]
 pytest = "*"
+ipykernel = "*"
 
 [requires]
 python_version = "3.11"

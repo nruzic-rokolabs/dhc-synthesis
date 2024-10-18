@@ -8,8 +8,8 @@ The module contains:
 """
 from fastapi import APIRouter
 
-from app import service
-from app.domain import Greeting
+from . import service
+from .domain import Greeting
 
 router = APIRouter()
 

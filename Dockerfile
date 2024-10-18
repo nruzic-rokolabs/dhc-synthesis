@@ -1,13 +1,15 @@
 FROM python:3.11
 
-COPY requirements.txt /requirements.txt
+WORKDIR /service
 
-RUN pip install --no-cache-dir --upgrade -r /requirements.txt
+COPY requirements.txt /service/requirements.txt
 
-COPY app /app
+RUN pip install --no-cache-dir --upgrade -r /service/requirements.txt
 
-WORKDIR /app
+COPY app /service/app
+COPY settings.yml /service/
 
 EXPOSE 8000
 
-CMD ["fastapi", "run", "main.py"]
+CMD ["fastapi", "run"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
