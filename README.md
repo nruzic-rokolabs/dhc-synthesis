@@ -7,13 +7,21 @@
 docker compose up -d
 ```
 
-### Start application
+### Setup virtual environment
+You need to have python 3.11[.7] installed on your environment.
+```shell
+pip install pipenv
+pipenv install --dev
+pipenv shell
+```
+
+### Start application from virtual environment
 Uvicorn process working dir should be project root dir to allow pydantic to pick up application settings from settings.yml file:
 ```bash
 fastapi run
 ```
 
-### Start application in dev mode
+### Start application in dev mode from virtual environment
 To watch and auto reload changes run following command:
 ```bash
 fastapi dev
