@@ -16,7 +16,7 @@ from .service import ConversationService
 router = APIRouter()
 
 
-@router.post("/converse")
+@router.post("")
 def converse(
         message_in: ConversationInputMessage,
         service: ConversationService = Depends(conversation_service)

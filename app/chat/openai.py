@@ -72,7 +72,7 @@ def converse(thread_id: str, message_in: str):
     messages_in = [HumanMessage(message_in)]
     for chunk, metadata in app.stream({
         "messages": messages_in,
-        "language": "Spanish"
+        "language": "Croatian"
     }, {
         "configurable": {
             "thread_id": thread_id
@@ -93,4 +93,6 @@ print(">>>>>>>>>>>>>>>>>>> ChatGPT connector initialized!!!!!!!!!!!!!!!!!!!!!!!!
 class OpenAIService(AIService):
 
     def simple_streaming_conversation(self, message: ConversationInputMessage) -> str:
-        yield converse(str(message.thread_id), message.message)
+        for chunk in converse(str(message.thread_id), message.message):
+            yield chunk
+

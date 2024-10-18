@@ -20,9 +20,10 @@ fastapi dev
 ```
 
 ### Start application using docker
-Build docker image if not already built and run it using following command
+Build docker image if not already built and run it using following command.\
+Note that you should have valid .env file in your project root folder. Consult [example.env](example.env) to see what information is needed in the environment.
 ```shell
-docker run --rm -d -P --name dhc-synthesis-api --network dhc-synthesis-api-network-1 dhc-synthesis-api
+docker run --rm -d -P --name dhc-synthesis-api --network dhc-synthesis-api-network-1 --env-file .env dhc-synthesis-api
 ```
 
 ## Developer Guide
