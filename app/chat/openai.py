@@ -4,7 +4,7 @@ from typing_extensions import Annotated, TypedDict
 from langchain_core.messages import HumanMessage, AIMessage, BaseMessage, trim_messages
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_openai import ChatOpenAI
-from langgraph.graph import START, MessagesState, StateGraph
+from langgraph.graph import START, StateGraph
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph.message import add_messages
 

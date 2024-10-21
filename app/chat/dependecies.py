@@ -1,8 +1,9 @@
+from .bedrock import BedrockAIService
 from .openai import OpenAIService
 from .service import ConversationService
 
 
 def conversation_service() -> ConversationService:
     return ConversationService(
-        ai_service=OpenAIService()
+        ai_service=BedrockAIService()
     )

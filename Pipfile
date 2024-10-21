@@ -15,6 +15,7 @@ langchain-aws = "*"
 langchain-core = "*"
 langgraph = "*"
 langchain-openai = "*"
+transformers = "*"
 
 [dev-packages]
 pytest = "*"
